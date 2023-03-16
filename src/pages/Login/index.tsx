@@ -1,6 +1,6 @@
 import DarkModeSwitcher from "../../components/DarkModeSwitcher";
 import MainColorSwitcher from "../../components/MainColorSwitcher";
-import logoUrl from "../../assets/images/logo.svg";
+import logoUrl from "../../assets/images/logo.png";
 import illustrationUrl from "../../assets/images/illustration.svg";
 import { FormInput, FormCheck } from "../../base-components/Form";
 import Button from "../../base-components/Button";
@@ -13,7 +13,7 @@ function Main() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const onFinish = async () => {
-    const email = "savanna16@hotmail.com"
+    const email = "jybe@mailinator.com"
     const password = "password"
     // post Event savanna16@hotmail.com
     authUser({email, password}, navigate, dispatch)
@@ -37,10 +37,10 @@ function Main() {
               <a href="" className="flex items-center pt-5 -intro-x">
                 <img
                   alt="Midone Tailwind HTML Admin Template"
-                  className="w-6"
+                  className="w-25"
                   src={logoUrl}
                 />
-                <span className="ml-3 text-lg text-white"> Rubick </span>
+                {/* <span className="ml-3 text-lg text-white"> Rubick </span> */}
               </a>
               <div className="my-auto">
                 <img
@@ -81,7 +81,7 @@ function Main() {
                   />
                 </div>
                 <div className="flex mt-4 text-xs intro-x text-slate-600 dark:text-slate-500 sm:text-sm">
-                  <div className="flex items-center mr-auto">
+                  {/* <div className="flex items-center mr-auto">
                     <FormCheck.Input
                       id="remember-me"
                       type="checkbox"
@@ -93,8 +93,8 @@ function Main() {
                     >
                       Remember me
                     </label>
-                  </div>
-                  <a href="">Forgot Password?</a>
+                  </div> */}
+                  {/* <a href="">Forgot Password?</a> */}
                 </div>
                 <div className="mt-5 text-center intro-x xl:mt-8 xl:text-left">
                   <Button
@@ -105,14 +105,14 @@ function Main() {
                   >
                     Login
                   </Button>
-                  <Button
+                  {/* <Button
                     variant="outline-secondary"
                     className="w-full px-4 py-3 mt-3 align-top xl:w-32 xl:mt-0"
                   >
                     Register
-                  </Button>
+                  </Button> */}
                 </div>
-                <div className="mt-10 text-center intro-x xl:mt-24 text-slate-600 dark:text-slate-500 xl:text-left">
+                {/* <div className="mt-10 text-center intro-x xl:mt-24 text-slate-600 dark:text-slate-500 xl:text-left">
                   By signin up, you agree to our{" "}
                   <a className="text-primary dark:text-slate-200" href="">
                     Terms and Conditions
@@ -121,7 +121,7 @@ function Main() {
                   <a className="text-primary dark:text-slate-200" href="">
                     Privacy Policy
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
             {/* END: Login Form */}

@@ -5,7 +5,7 @@ import { selectSideMenu } from "../../stores/slice/sideMenuSlice";
 import { useAppSelector } from "../../stores/slice/hooks";
 import { FormattedMenu, linkTo, nestedMenu, enter, leave } from "./side-menu";
 import Lucide from "../../base-components/Lucide";
-import logoUrl from "../../assets/images/logo.svg";
+import logoUrl from "../../assets/images/logo.png";
 import clsx from "clsx";
 import TopBar from "../../components/TopBar";
 import MobileMenu from "../../components/MobileMenu";
@@ -39,11 +39,11 @@ function Main() {
           >
             <img
               alt="Midone Tailwind HTML Admin Template"
-              className="w-6"
+              className="w-4"
               src={logoUrl}
             />
             <span className="hidden ml-3 text-lg text-white xl:block">
-              Rubick
+              Famillie
             </span>
           </Link>
           <Divider type="div" className="my-6"></Divider>

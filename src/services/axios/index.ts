@@ -3,6 +3,7 @@ import axios from "axios"
 
 let headers = {}
 
+// const baseURL = '/'
 const baseURL = 'http://217.76.54.247:8080/admin'
 
 const axiosInstance = (history: any) =>{
