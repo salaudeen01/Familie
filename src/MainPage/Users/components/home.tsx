@@ -63,7 +63,6 @@ function Home() {
       )
     },
   ]
-console.log(_.take(fakerData, 9))
   return (
     <>
       <h2 className="mt-10 text-lg font-medium intro-y">Users Page</h2> 

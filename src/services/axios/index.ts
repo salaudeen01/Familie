@@ -1,10 +1,12 @@
+import { notification } from "antd"
 import axios from "axios"
 // import { MessageSquare } from "lucide"
 
 let headers = {}
 
-// const baseURL = '/'
-const baseURL = 'http://217.76.54.247:8080/admin'
+// const baseURL = '/'http://52.86.132.19:3001
+const baseURL = 'http://52.86.132.19:3001/admin'
+// const baseURL = 'http://52.86.132.19:3001/'
 
 const axiosInstance = (history: any) =>{
   const axiosInstance = axios.create({
@@ -14,8 +16,8 @@ const axiosInstance = (history: any) =>{
     async config => {
       const accessToken = localStorage.getItem('accessToken');
       if (accessToken) {
-        config.headers.Authorization = `bearer ${accessToken}`;
-        config.headers.AccessToken = accessToken;
+        config.headers.Authorization = `Bearer ${accessToken}`;
+        // config.headers.AccessToken = accessToken;
       }
       config.headers.Accept = 'application/json';
       config.headers['Content-Type'] = 'application/json';
@@ -42,11 +44,11 @@ const axiosInstance = (history: any) =>{
         if (error.response?.status === 401 || error.response?.status === 403) {
           localStorage.removeItem('accessToken');
           history ? history('/login') : window.location.href = '/login';
-          // MessageSquare.error({
-          //   content: 'Token has expired, please re-login to continue.',
-          //   duration: 1,
-          //   key: 'updatable',
-          // })
+          notification.error({
+            message: 'Token has expired, please re-login to continue.',
+            duration: 1,
+            key: 'updatable',
+          })
           return new Promise((resolve, reject) => {
             reject(error);
           });

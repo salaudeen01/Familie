@@ -5,6 +5,10 @@ import sideMenuReducer from "./slice/sideMenuSlice";
 import simpleMenuReducer from "./slice/./simpleMenuSlice";
 import topMenuReducer from "./slice/./topMenuSlice";
 import auth from './slice/auth'
+import role from './slice/role'
+import loading from "./slice/loading";
+import permission from "./slice/permission";
+import admin from "./slice/admin";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +18,11 @@ export const store = configureStore({
     simpleMenu: simpleMenuReducer,
     topMenu: topMenuReducer,
     auth,
+    admin,
+    role,
+    permission,
+    loading
+    // allRoles: roleSlice
   },
 });
 

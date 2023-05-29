@@ -1,6 +1,7 @@
 import { Tabs, TabsProps } from "antd";
 import Button from "../../base-components/Button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Wallet() {
   const showModal = () => {
@@ -31,9 +32,11 @@ function Wallet() {
                 <h2 className="mt-5 text-lg font-medium intro-y">Wallet</h2> 
             </div>
             <div className="mt-4 intro-y">
-                <Button onClick={showModal}>
+              <Link to='/usersx'>
+                <Button onClick={showModal} >
                     Back
                 </Button>
+              </Link>
             </div>
           </div>
           <div>

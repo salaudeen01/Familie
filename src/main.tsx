@@ -5,11 +5,13 @@ import { Provider } from "react-redux";
 import { store } from "./stores/store";
 import Router from "./router";
 import "./assets/css/app.css";
+// import EntryRoute from "./mainRouter";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
     <Provider store={store}>
       <Router />
+      {/* <EntryRoute /> */}
     </Provider>
     <ScrollToTop />
   </BrowserRouter>

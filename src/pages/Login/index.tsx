@@ -1,23 +1,40 @@
-import DarkModeSwitcher from "../../components/DarkModeSwitcher";
-import MainColorSwitcher from "../../components/MainColorSwitcher";
+
 import logoUrl from "../../assets/images/logo.png";
 import illustrationUrl from "../../assets/images/illustration.svg";
 import { FormInput, FormCheck } from "../../base-components/Form";
 import Button from "../../base-components/Button";
 import clsx from "clsx";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { authUser } from "../../services/apis/auth";
+import React, { useState } from "react";
+import { auth } from "../../stores/slice/auth";
+import { RootState } from "../../stores/store";
 
 function Main() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
+  // const loading = useSelector(({loading}) => loading.loading);
+  const loading = useSelector((state: RootState) => state.auth.loading)
+  console.log(loading)
+  const [login, setLogin] = useState({
+    email:'',
+    password: '',
+  })
   const onFinish = async () => {
-    const email = "jybe@mailinator.com"
-    const password = "password"
+    // const email = "admin@mailinator.com"
+    // const password = "password@1234"
+    const {email, password} = login
+    console.log(login)
     // post Event savanna16@hotmail.com
     authUser({email, password}, navigate, dispatch)
   };
+
+  // React.useEffect(() => {
+  //   if (localStorage.getItem('accessToken')) {
+  //     navigate('/')
+  //   }
+  // }, [navigate])
   
   return (
     <>
@@ -72,10 +89,13 @@ function Main() {
                   <FormInput
                     type="text"
                     className="block px-4 py-3 intro-x login__input min-w-full xl:min-w-[350px]"
+                    // value={email} 
+                    onChange={({target:{value}})=>setLogin({...login, email: value})}
                     placeholder="Email"
                   />
                   <FormInput
                     type="password"
+                    onChange={({target:{value}})=>setLogin({...login, password: value})}
                     className="block px-4 py-3 mt-4 intro-x login__input min-w-full xl:min-w-[350px]"
                     placeholder="Password"
                   />
@@ -101,6 +121,7 @@ function Main() {
                     variant="primary"
                     className="w-full px-4 py-3 align-top xl:w-32 xl:mr-3"                    
                     // onFinish={onFinish}
+                    // loading={loading}
                     onClick={()=>onFinish()}
                   >
                     Login

@@ -155,6 +155,11 @@ const initialState: SideMenuState = {
       title: "Users 2",
     },
     {
+      icon: "Settings",
+      pathname: "/settings",
+      title: "Settings",
+    },
+    {
       icon: "Inbox",
       pathname: "/wallet",
       title: "Wallet",
