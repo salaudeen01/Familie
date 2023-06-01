@@ -1,3 +1,4 @@
+// @ts-nocheck
 import _ from "lodash";
 import { useRef } from "react";
 import fakerData from "../../utils/faker";

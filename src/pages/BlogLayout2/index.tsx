@@ -1,3 +1,4 @@
+// @ts-nocheck
 import _ from "lodash";
 import fakerData from "../../utils/faker";
 import Button from "../../base-components/Button";

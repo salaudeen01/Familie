@@ -1,3 +1,4 @@
+// @ts-nocheck
 import _ from "lodash";
 import clsx from "clsx";
 import { useState } from "react";

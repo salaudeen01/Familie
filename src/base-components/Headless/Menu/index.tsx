@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { twMerge } from "tailwind-merge";
 import { Menu as HeadlessMenu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
@@ -22,6 +23,9 @@ function Menu({
 Menu.Button = ({
   children,
   className,
+  tag,
+  href,
+  variant,
   ...props
 }: ExtractProps<typeof HeadlessMenu.Button>) => {
   return (

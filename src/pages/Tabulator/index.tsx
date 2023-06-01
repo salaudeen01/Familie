@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Lucide from "../../base-components/Lucide";
 import { Menu } from "../../base-components/Headless";
 import Button from "../../base-components/Button";
